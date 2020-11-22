@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>树形菜单</title>
+</head>
+
+<body>
+	<div class="container">
+		<ul class="tree">
+			<li>
+				<span>男子</span>
+				<ul>
+					<li>
+						<span>上装</span>
+						<ul>
+							<li><span>衣服1</span></li>
+							<li><span>衣服2</span></li>
+							<li><span>衣服3</span></li>
+							<li><span>衣服4</span></li>
+						</ul>
+					</li>
+					<li>
+						<span>鞋类</span>
+						<ul>
+							<li><span>运动鞋1</span></li>
+							<li><span>运动鞋2</span></li>
+							<li><span>运动鞋3</span></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<span>女子</span>
+				<ul>
+					<li>
+						<span>上装</span>
+						<ul>
+							<li><span>衣服1</span></li>
+							<li><span>衣服2</span></li>
+							<li><span>衣服3</span></li>
+							<li><span>衣服4</span></li>
+						</ul>
+					</li>
+					<li>
+						<span>鞋类</span>
+						<ul>
+							<li><span>运动鞋1</span></li>
+							<li><span>运动鞋2</span></li>
+							<li><span>运动鞋3</span></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$(".tree li").on('click', function (e) {
+				if (e.target.tagName != 'SPAN') {
+					return;
+				}
+				e.stopPropagation();
+				var _li = $(this).children("ul");
+				if (_li.is(":hidden")) {
+					_li.show();
+				} else {
+					_li.hide();
+				}
+			})
+		})
+	</script>
+</body>
+
+</html>
